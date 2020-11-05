@@ -1,0 +1,21 @@
+<h1><%=@scientist.name%></h1>
+
+<div>
+Field of Study: <%=@scientist.field_of_study%>
+<br>
+Planets Visited:
+</div>
+
+<div>
+<ul>
+    <% @scientist.planets.each do |planet| %>
+    <li> <%= planet.name %> </li>
+    <% end %>
+</ul>
+</div>
+
+<%=link_to "Return to the Scientist Index", scientists_path%>
+<br><br>
+<%=link_to "Edit personal details", edit_scientist_path(@scientist)%>
+<br><br>
+<%=button_to "Delete scientist profile", @scientist, :method => "delete"%>
